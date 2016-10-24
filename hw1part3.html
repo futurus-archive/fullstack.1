@@ -1,0 +1,136 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HW1 - Dating Web Site</title>
+  <meta name="description" content="USTHK Course 1">
+  <meta name="author" content="Vu Nguyen">
+  <style>
+      fieldset {
+          background:lightyellow; 
+          border:10px solid yellow; 
+          margin-bottom:10px; 
+          width:720px;
+          }
+      label {
+          width:180px; 
+          display:inline-block; 
+          text-align:right; 
+          vertical-align:top;
+          }
+      label:hover, input:hover {
+          font-size:25px;
+      }
+      label[checkbox] {
+          width:auto;
+          }
+      input {
+          text-align:left;
+      }
+      input[type="number"] {
+          width:50px;
+      }
+      div.max {
+          width:50px;
+          display:inline-block;
+          background-color: purple;
+          color:white;
+          text-align:center;
+          padding:2px;
+      }
+      div.min {
+          width:50px;
+          display:inline-block;
+          background-color: brown;
+          color:white;
+          text-align:center;
+          padding:2px;
+      }
+      textarea {
+          width:360px; 
+          height:50px
+          }
+  </style>
+</head>
+
+<body>
+    <h1>Please Enter Your Details For Our Dating Website!</h1>
+    <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post", enctype="multipart/form-data">
+        <section>
+            <fieldset>
+                <legend>Your Face</legend>
+                <label for="avatar">Your image:</label>
+                <input type="file" id="avatar" name="avatar" required>
+                <br>
+                <label for="preview">Image preview</label>
+                <img id="preview" name="preview"></img>
+            </fieldset>
+        </section>
+        <section>
+            <fieldset>
+                <legend>Your General Details</legend>
+                <label for="fullname">Name:</label>
+                <input type="text" placeholder="Your full name" id="fullname" name="fullname" required>
+                <br>
+                <label for="gender">Gender:</label>
+                <input type="radio" id="gender" name="gender" value="male" required>Male
+                <input type="radio" id="gender" name="gender" value="female" required>Female
+                <br>
+                <label for="age">Age:</label>
+                <input type="number" placeholder="18" id="age" name="age" required>
+                <br>
+                <label for="dob">Date of birth:</label>
+                <input type="date" id="dob" name="dob">
+                <br>
+                <label for="color">Favorite color:</label>
+                <input type="color" id="color" name="color">
+                <br>
+                <label for="country">Which country:</label>
+                <select id="country" name="country">
+                    <option value="no selection"></option>
+                    <option value="angola">Angola</option>
+                    <option value="germany">Germany</option>
+                    <option value="portugal">Portugal</option>
+                    <option value="united states of america">United States of America</option>
+                    <option value="vanuatu">Vanuatu</option>
+                </select>
+            </fieldset>
+        </section>
+        <section>
+            <fieldset>
+                <legend>Your Indicators</legend>
+                <label for="height">Height:</label>
+                <div class="min">Short</div>
+                <input type="range" id="height" name="height" min="0" max="100" value="50" step="5">
+                <div class="max">Tall</div>
+                <br>
+                <label for="salary">Salary:</label>
+                <div class="min">Poor</div>
+                <input type="range" id="salary" name="salary" min="0" max="100" value="50" step="5">
+                <div class="max">Rich</div>
+            </fieldset>
+        </section>
+        <section>
+            <fieldset>
+                <legend>Your Contact Information</legend>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="mobile">Mobile:</label>
+                <input type="tel" id="mobile" name="mobile">
+                <br>
+                <label for="address">Address:</label>
+                <textarea id="address" name="address"></textarea>
+                <br>
+                <label for="contact">Method to contact you</label>
+                <input type="checkbox" id="contact" name="contact" value="email">Email
+                <input type="checkbox" id="contact" name="contact" value="whatsapp">Whatsapp
+                <input type="checkbox" id="contact" name="contact" value="whatsapp">In-app chat
+            </fieldset>
+        </section>
+        <input type="submit" value="Submit">
+    </form>
+    <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+</body>
+</html>
