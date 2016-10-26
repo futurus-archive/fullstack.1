@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HW2 - Color Guessing Game</title>
+  <meta name="description" content="USTHK Course 1 - HW2">
+  <meta name="author" content="Vu Nguyen">
+  <script>
+    colors = ["Aqua", "Azure", "Beige", "Black", "Blue", 
+              "Brown", "Cyan", "Gold", "Gray", "Green", 
+              "Ivory", "Lime", "Navy", "Orange", "Pink", 
+              "Purple", "Red", "Violet", "White", "Yellow"].map(function(v) { 
+                  return v.toLowerCase(); 
+                  }).sort();
+    
+    function do_game() {
+        var target_index = Math.floor(Math.random() * colors.length);
+        var target = colors[target_index];
+        var finished = false;
+        count = 0;
+
+        while(!finished) {
+            var guess_input = prompt("I am thinking of one of these colors:\n\n" + 
+                            colors.join(", ") +
+                            "\n\nWhich color am I thinking of?");
+            count++;
+
+            if (guess_input.toLowerCase() === target) {
+                document.getElementsByTagName("body")[0].style.background = target;
+                alert("Congratulations! You have guessed the color!\n\nIt took you " 
+                        + count + (count > 1 ? " guesses" : " guess") 
+                        + " to finish the game!\n\nYou can see the color in the background.");
+                finished = true;
+            }
+        }
+    }
+  </script>
+
+</head>
+
+<body onload="do_game();">
+    
+</body>
+</html>
